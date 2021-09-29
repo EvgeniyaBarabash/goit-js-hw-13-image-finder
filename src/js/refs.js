@@ -2,9 +2,9 @@ export default{
     formRef: document.querySelector('#search-form'),
     inputRef: document.querySelector('input[type="text"]'),
     loadMoreBtn: document.querySelector('#loadMore'),
-list: document.querySelector('.gallery'),
+list: document.querySelector('.gallery-list'),
 scrollBtn: document.querySelector('.navigation__item--btn'),
-}
+};
 
 
 
