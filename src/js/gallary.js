@@ -36,6 +36,7 @@ class imagesPagination{
   onFormSubmit(event){
  
     event.preventDefault();
+ this.showLoadBtn();
         this.page = 1; 
     this.queryStr=event.target.elements.query.value.trim();
     list.innerHTML='';
@@ -67,13 +68,14 @@ error({
     else{
 const imagesMarkUp = imagesListTmpl(hits);
    list.insertAdjacentHTML('beforeend', imagesMarkUp);
+   this.hideLoadBtn()
     }
     
   }
    loadMore(){
      this.page+=1
          this.fetchImages()
-     
+        
    }
    onReset(e){
      console.log(e.target);
@@ -87,6 +89,12 @@ const imagesMarkUp = imagesListTmpl(hits);
     behavior: 'smooth',
     block: 'end',
   })
+   }
+   showLoadBtn(){
+    loadMoreBtn.classList.remove('is-hidden');
+   }
+   hideLoadBtn(){
+     loadMoreBtn.classList.add('is-hidden');
    }
   }
   const images = new imagesPagination();
